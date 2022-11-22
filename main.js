@@ -618,14 +618,13 @@ for (let progressBar of progressBars) {
     beforeShowMonth: null,
     beforeShowYear: null,
     calendarWeeks: false,
-    clearBtn: false,
     dateDelimiter: ",",
     datesDisabled: [],
     daysOfWeekDisabled: [],
     daysOfWeekHighlighted: [],
     defaultViewDate: undefined, // placeholder, defaults to today() by the program
     disableTouchKeyboard: false,
-    format: "mm/dd/yyyy",
+    format: "dd/mm/yyyy",
     getCalendarWeek: null,
     language: "es",
     maxDate: null,
@@ -641,8 +640,6 @@ for (let progressBar of progressBars) {
     showOnFocus: true,
     startView: 0,
     title: "",
-    todayBtn: false,
-    todayBtnMode: 0,
     todayHighlight: true,
     updateOnBlur: true,
     weekStart: 0,
@@ -922,14 +919,6 @@ for (let progressBar of progressBars) {
         y: orientation.find((y) => y === "top" || y === "bottom") || "auto",
       };
       delete inOpts.orientation;
-    }
-    if (inOpts.todayBtnMode !== undefined) {
-      switch (inOpts.todayBtnMode) {
-        case 0:
-        case 1:
-          config.todayBtnMode = inOpts.todayBtnMode;
-      }
-      delete inOpts.todayBtnMode;
     }
 
     config.getCalendarWeek =
@@ -1773,27 +1762,6 @@ for (let progressBar of progressBars) {
       .render();
   }
 
-  function onClickTodayBtn(datepicker) {
-    const picker = datepicker.picker;
-    const currentDate = today();
-    if (datepicker.config.todayBtnMode === 1) {
-      if (datepicker.config.autohide) {
-        datepicker.setDate(currentDate);
-        return;
-      }
-      datepicker.setDate(currentDate, { render: false });
-      picker.update();
-    }
-    if (picker.viewDate !== currentDate) {
-      picker.changeFocus(currentDate);
-    }
-    picker.changeView(0).render();
-  }
-
-  function onClickClearBtn(datepicker) {
-    datepicker.setDate({ clear: true });
-  }
-
   function onClickViewSwitch(datepicker) {
     switchView(datepicker);
   }
@@ -1859,28 +1827,6 @@ for (let progressBar of progressBars) {
       options.nextArrow.forEach((node) => {
         nextBtn.appendChild(node.cloneNode(true));
       });
-    }
-    if (options.locale) {
-      picker.controls.todayBtn.textContent = options.locale.today;
-      picker.controls.clearBtn.textContent = options.locale.clear;
-    }
-    if (options.todayBtn !== undefined) {
-      if (options.todayBtn) {
-        showElement(picker.controls.todayBtn);
-      } else {
-        hideElement(picker.controls.todayBtn);
-      }
-    }
-    if (hasProperty(options, "minDate") || hasProperty(options, "maxDate")) {
-      const { minDate, maxDate } = picker.datepicker.config;
-      picker.controls.todayBtn.disabled = !isInRange(today(), minDate, maxDate);
-    }
-    if (options.clearBtn !== undefined) {
-      if (options.clearBtn) {
-        showElement(picker.controls.clearBtn);
-      } else {
-        hideElement(picker.controls.clearBtn);
-      }
     }
   }
 
@@ -1953,17 +1899,14 @@ for (let progressBar of progressBars) {
         config.buttonClass
       );
       const element = (this.element = parseHTML(template).firstChild);
-      const [header, main, footer] = element.firstChild.children;
+      const [header, main] = element.firstChild.children;
       const title = header.firstElementChild;
       const [prevBtn, viewSwitch, nextBtn] = header.lastElementChild.children;
-      const [todayBtn, clearBtn] = footer.firstChild.children;
       const controls = {
         title,
         prevBtn,
         viewSwitch,
         nextBtn,
-        todayBtn,
-        clearBtn,
       };
       this.main = main;
       this.controls = controls;
@@ -1985,8 +1928,6 @@ for (let progressBar of progressBars) {
         ],
         [controls.prevBtn, "click", onClickPrevBtn.bind(null, datepicker)],
         [controls.nextBtn, "click", onClickNextBtn.bind(null, datepicker)],
-        [controls.todayBtn, "click", onClickTodayBtn.bind(null, datepicker)],
-        [controls.clearBtn, "click", onClickClearBtn.bind(null, datepicker)],
       ]);
 
       // set up views
