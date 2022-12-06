@@ -13,6 +13,11 @@ Copia y pega este código en tu archivo index.html o en el archivo raíz de tu p
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opticrd/ssd-lib/styles.min.css"/>
+<link
+  href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/vs.min.css">
 ```
 Tener en cuenta tambien la importacion de bootstrap ya que nos apoyamos en su sistema de layouts para trabajar con el resposive y mas.
 ```html
@@ -26,6 +31,7 @@ Copia y pega este código en tu archivo index.html o en el archivo raíz de tu p
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/opticrd/ssd-lib/main.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/opticrd/official-header/main.js" defer></script>
 ```
 
 ## Como usar
