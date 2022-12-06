@@ -1,4 +1,4 @@
-#Header
+# Header
 
     <header>
         <div class="topbar">
@@ -61,7 +61,7 @@
         </div>
       </header>
 
-#Banner
+# Banner
 
     <div class="banner">
         <div class="banner_content bg-blue-ligth">
@@ -81,7 +81,7 @@
         />
       </div>
 
-#Footer
+# Footer
 
     <footer class="footer-dark">
         <div class="footer-top">
