@@ -220,6 +220,7 @@ body {
 }
 .topbar .logo {
   display: flex;
+  align-items: center;
 }
 .topbar .logo-icon {
   margin-right: 20px;
