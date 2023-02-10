@@ -6958,32 +6958,26 @@ input.multiple {
 
 /* Typography */
 h1 {
-  font-size: 64pt;
   font-weight: 400;
 }
 
 h2 {
-  font-size: 56pt;
   font-weight: 400;
 }
 
 h3 {
-  font-size: 48pt;
   font-weight: 400;
 }
 
 h4 {
-  font-size: 40pt;
   font-weight: 400;
 }
 
 h5 {
-  font-size: 32pt;
   font-weight: 500;
 }
 
 h6 {
-  font-size: 24pt;
   font-weight: 500;
 }
 
