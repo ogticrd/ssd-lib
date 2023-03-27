@@ -1,4 +1,4 @@
-export class GovernmentOfficialSeal extends HTMLElement {
+class GovernmentOfficialSeal extends HTMLElement {
 
   static get observedAttributes() {
     return ['class'];
@@ -232,3 +232,5 @@ export class GovernmentOfficialSeal extends HTMLElement {
     }
   }
 }
+
+window.customElements.define("official-seal", GovernmentOfficialSeal);
