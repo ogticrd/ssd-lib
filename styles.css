@@ -6996,3 +6996,18 @@ p,
 .bold {
   font-weight: 600;
 }
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px
+}
+
+.card h3 {font-size: 18px;
+}
+
+.card .card-link {
+text-decoration: underline;
+color: #0087FF;
+font-size: 12px;
+}
