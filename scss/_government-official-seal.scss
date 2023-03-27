@@ -1,0 +1,172 @@
+.official-seal {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 3px 20px;
+    background-color: white;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: left !important;
+}
+
+.official-seal.dark {
+    background-color: #003876;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left !important;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1330px;
+    }
+}
+
+.row,
+.row>div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 20px;
+}
+
+.row p {
+    margin: 0;
+}
+
+.flag {
+    height: 12px;
+}
+
+.official-seal.dark .action {
+    color: #0087FF;
+}
+
+.action {
+    color: #003670;
+    text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.action .chevron {
+    width: 20px;
+}
+
+.proves {
+    display: none;
+}
+
+.proves .icon {
+    background: #003670;
+    padding: 10px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 12px;
+}
+
+.official-seal.dark .proves .icon {
+    background: #0087FF;
+}
+
+.official-seal.dark .proves .subtitle {
+    color: white;
+}
+
+.proves .icon img {
+    width: 18px;
+    height: 18px;
+}
+
+.proves>div {
+    display: flex;
+    align-items: start;
+    padding: 8px;
+    gap: 16px;
+    width: 40%;
+}
+
+.proves .subtitle {
+    color: #003670;
+    font-weight: 600;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked+.proves {
+    display: flex;
+    align-items: start;
+}
+
+#toggle:checked+.chevron {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .proves {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proves>div {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .row p {
+        display: inline;
+        margin: 0;
+        margin-top: 2px;
+    }
+
+    .row .action {
+        display: block;
+    }
+
+    .row .action span {
+        display: none;
+    }
+}
+
+@media (max-width: 460px) {
+    .official-seal>.row.container>div>p {
+        font-size: 2.4vw;
+        white-space: nowrap;
+    }
+}
