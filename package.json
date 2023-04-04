@@ -1,10 +1,11 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.0-alpha2",
+    "remixicon": "^2.5.0",
     "uglify-js": "^3.17.4"
   },
   "scripts": {
-    "precompress" : "sass .\\scss\\styles.scss styles.css --style compressed",
+    "precompress": "sass .\\scss\\styles.scss styles.css --style compressed",
     "compress": "uglifyjs .\\node_modules\\bootstrap\\dist\\js\\bootstrap.bundle.js .\\js\\government-official-seal.js .\\js\\js.js --output script.min.js"
   }
 }
